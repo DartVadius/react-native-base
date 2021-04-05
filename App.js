@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
 import Root from './Screens/Root';

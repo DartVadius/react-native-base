@@ -1,13 +1,9 @@
 import React, {Component} from 'react';
-import {SafeAreaView} from 'react-native';
-import AppNavigator from '../navigators/AppNavigator';
+import {SafeAreaView, Text} from 'react-native';
 import {connect} from 'react-redux';
-import {NavigationContainer} from '@react-navigation/native';
 
-class Root extends Component {
+class CardsScreen extends Component {
   render() {
-    const {isLoggedIn} = this.props;
-    console.log(123, isLoggedIn);
     return (
       <SafeAreaView
         style={{
@@ -15,9 +11,7 @@ class Root extends Component {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <NavigationContainer>
-          <AppNavigator isLoggedIn={isLoggedIn} />
-        </NavigationContainer>
+        <Text>Cards</Text>
       </SafeAreaView>
     );
   }
@@ -32,4 +26,4 @@ const mapDispatchToProps = dispatch => ({
   logout: dispatch.auth.logout,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Root);
+export default connect(mapStateToProps, mapDispatchToProps)(CardsScreen);
