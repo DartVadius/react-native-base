@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React, {Component} from 'react';
 import {SafeAreaView} from 'react-native';
 import AppNavigator from '../navigators/AppNavigator';

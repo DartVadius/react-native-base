@@ -11,8 +11,8 @@ const AuthStackNavigator = createStackNavigator();
 class AuthStack extends Component {
   render() {
     return (
-      <AuthStackNavigator.Navigator initialRouteName="Login">
-        <AuthStackNavigator.Screen name="Login" component={LoginScreen} />
+      <AuthStackNavigator.Navigator initialRouteName="login">
+        <AuthStackNavigator.Screen name="login" component={LoginScreen} />
       </AuthStackNavigator.Navigator>
     );
   }

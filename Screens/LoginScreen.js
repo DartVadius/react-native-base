@@ -1,14 +1,16 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import React, {Component, PureComponent} from 'react';
+import {View, Text, SafeAreaView} from 'react-native';
 import {connect} from 'react-redux';
 
-class LoginScreen extends Component {
+class LoginScreen extends PureComponent {
   render() {
     console.log(22);
     return (
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>Login Screen</Text>
-      </View>
+      <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+          <Text>Login Screen</Text>
+        </View>
+      </SafeAreaView>
     );
   }
 }
