@@ -7,12 +7,8 @@ import DropdownAlert from 'react-native-dropdownalert';
 import {DropDownHolder} from './common/DropDownHolder';
 import {getPersistor} from '@rematch/persist';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {View, Text} from 'react-native';
-import LoginScreen from './Screens/LoginScreen';
 
 const persistor = getPersistor();
-const Stack = createStackNavigator();
 
 export default class App extends Component {
   render() {
@@ -21,9 +17,7 @@ export default class App extends Component {
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
             <NavigationContainer>
-              <Stack.Navigator>
-                <Stack.Screen name="Home" component={LoginScreen} />
-              </Stack.Navigator>
+              <Root />
             </NavigationContainer>
           </PersistGate>
         </Provider>

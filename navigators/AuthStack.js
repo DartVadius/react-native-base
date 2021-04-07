@@ -1,10 +1,9 @@
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import HomeScreen from '../Screens/HomeScreen';
-import CardsScreen from '../Screens/CardsScreen';
 import {Component} from 'react';
 import {connect} from 'react-redux';
 import LoginScreen from '../Screens/LoginScreen';
+import RegistrationScreen from '../Screens/RegistrationScreen';
 
 const AuthStackNavigator = createStackNavigator();
 
@@ -13,6 +12,10 @@ class AuthStack extends Component {
     return (
       <AuthStackNavigator.Navigator initialRouteName="login">
         <AuthStackNavigator.Screen name="login" component={LoginScreen} />
+        <AuthStackNavigator.Screen
+          name="registration"
+          component={RegistrationScreen}
+        />
       </AuthStackNavigator.Navigator>
     );
   }

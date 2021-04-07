@@ -2,12 +2,12 @@ import React, {Component, PureComponent} from 'react';
 import {View, Text, SafeAreaView} from 'react-native';
 import {connect} from 'react-redux';
 
-class LoginScreen extends PureComponent {
+class RegistrationScreen extends PureComponent {
   render() {
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-          <Text>Login Screen</Text>
+          <Text>Registration Screen</Text>
         </View>
       </SafeAreaView>
     );
@@ -23,4 +23,4 @@ const mapDispatchToProps = dispatch => ({
   logout: dispatch.auth.logout,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(RegistrationScreen);

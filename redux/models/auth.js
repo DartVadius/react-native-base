@@ -35,18 +35,25 @@ export default {
      *
      * @return {Promise}
      */
-    login(payload) {
-      return Api.post('oauth/token', {
-        ...payload,
-      })
-        .then(response => response.data)
-        .then(async res => {
-          if (res) {
-            await TokenStorage.storeToken(res.access_token);
-            this.setIsLoggedIn(true);
-          }
-        })
-        .catch(e => Promise.reject(e));
+    async login(payload, rootState) {
+      const response = await Api.post('login', payload);
+
+      if (response) {
+        await TokenStorage.storeToken(response.data.access_token);
+        this.setIsLoggedIn(true);
+      }
+
+      return response;
+    },
+    async register(payload, rootState) {
+      const response = await Api.post('register', payload);
+
+      if (response) {
+        await TokenStorage.storeToken(response.data.access_token);
+        this.setIsLoggedIn(true);
+      }
+
+      return response;
     },
     // async logout() {
     //   try {

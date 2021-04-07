@@ -1,26 +1,14 @@
 import 'react-native-gesture-handler';
 import React, {Component} from 'react';
-import {SafeAreaView} from 'react-native';
-import AppNavigator from '../navigators/AppNavigator';
 import {connect} from 'react-redux';
-import {NavigationContainer} from '@react-navigation/native';
+import MainStack from '../navigators/MainStack';
+import AuthStack from '../navigators/AuthStack';
 
 class Root extends Component {
   render() {
     const {isLoggedIn} = this.props;
-    console.log(123, isLoggedIn);
-    return (
-      <SafeAreaView
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <NavigationContainer>
-          <AppNavigator isLoggedIn={isLoggedIn} />
-        </NavigationContainer>
-      </SafeAreaView>
-    );
+
+    return isLoggedIn ? <MainStack /> : <AuthStack />;
   }
 }
 
